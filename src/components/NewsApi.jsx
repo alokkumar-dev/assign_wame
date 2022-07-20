@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import "./NewsApi.css";
 export const NewsApi = () => {
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState("india");
+  const [search, setSearch] = useState("");
+  const [clickValue, setClickValue] = useState();
+
 
   const getData = () => {
     axios
       .get(
-        `https://gnews.io/api/v4/search?q=${search}&token=c894ebb88be054af15fd401a6a59444a&country=in&max=15`
+        `https://gnews.io/api/v4/search?q=${clickValue}&token=c894ebb88be054af15fd401a6a59444a&country=in&max=15`
       )
       .then((res) => {
         console.log(res.data);
@@ -19,10 +21,16 @@ export const NewsApi = () => {
     console.log(e.target.value);
     setSearch(e.target.value);
   };
+  const handleClick = () => {
+    console.log(search);
+    setClickValue(search);
+  };
+
 
   useEffect(() => {
     getData();
-  }, [search]);
+    handleClick();
+  }, [clickValue]);
   return (
     <>
       <div className="searchDiv">
@@ -32,6 +40,7 @@ export const NewsApi = () => {
           onChange={handleChange}
           placeholder="search by title or country name."
         />
+        <img className="searchIcon" onClick={handleClick} src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png" alt="search icon" />
       
       </div>
 
