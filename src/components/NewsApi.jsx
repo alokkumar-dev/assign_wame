@@ -8,7 +8,7 @@ export const NewsApi = () => {
   const getData = () => {
     axios
       .get(
-        `https://gnews.io/api/v4/search?q=${search}&token=8e70544bf215cb959f607aa1f9c0be02&country=in&max=15`
+        `https://gnews.io/api/v4/search?q=${search}&token=c894ebb88be054af15fd401a6a59444a&country=in&max=15`
       )
       .then((res) => {
         console.log(res.data);
@@ -19,6 +19,7 @@ export const NewsApi = () => {
     console.log(e.target.value);
     setSearch(e.target.value);
   };
+
   useEffect(() => {
     getData();
   }, [search]);
@@ -31,6 +32,7 @@ export const NewsApi = () => {
           onChange={handleChange}
           placeholder="search by title or country name."
         />
+      
       </div>
 
       <div className="newsCont">
@@ -40,7 +42,6 @@ export const NewsApi = () => {
               <div className="descNews">
                 <h2 className="title">{news.title}</h2>
                 <p className="desc">{news.description}</p>
-                {/* <h3 className="moreAboutNews"></h3> */}
                 More about news{" "}
                 <a className="moreAboutNews" href={news.url}>
                   Click here
