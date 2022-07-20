@@ -5,10 +5,8 @@ export const NewsApi = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("india");
 
-  // `https://gnews.io/api/v4/top-headlines?token=9085e7acc6f554d87bb660bbe7670acb&page=${pageNo}&limit=${PAGE_LIMIT}`
-  // let pageLimit = 15;
+
   const getData = () => {
-    // 87934253545cccb473a34c909c48d049
 
     axios
       .get(
