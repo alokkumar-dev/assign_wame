@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.newsCont {
+  border: 1px solid black;
+}
+.searchDiv{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+.searchBox{
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+}
+.oneNews {
+  display: flex;
+  width: 50%;
+}
+.descNews {
+  border: 1px solid red;
+}
+.newsImg {
+  height: 150px;
+  width: 150px;
+}
