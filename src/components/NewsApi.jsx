@@ -5,9 +5,7 @@ export const NewsApi = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("india");
 
-
   const getData = () => {
-
     axios
       .get(
         `https://gnews.io/api/v4/search?q=${search}&token=8e70544bf215cb959f607aa1f9c0be02&country=in&max=15`
@@ -31,7 +29,7 @@ export const NewsApi = () => {
           className="searchBox"
           type="text"
           onChange={handleChange}
-          placeholder="search by title"
+          placeholder="search by title or country name."
         />
       </div>
 
@@ -43,7 +41,10 @@ export const NewsApi = () => {
                 <h2 className="title">{news.title}</h2>
                 <p className="desc">{news.description}</p>
                 {/* <h3 className="moreAboutNews"></h3> */}
-                More about news <a className="moreAboutNews" href={news.url}>Click here</a>
+                More about news{" "}
+                <a className="moreAboutNews" href={news.url}>
+                  Click here
+                </a>
               </div>
 
               <img className="newsImg" src={news.image} alt="" />
