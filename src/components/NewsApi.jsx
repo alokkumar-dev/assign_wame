@@ -12,7 +12,7 @@ export const NewsApi = () => {
 
     axios
       .get(
-        `https://gnews.io/api/v4/search?q=${search}&token=9085e7acc6f554d87bb660bbe7670acb&country=in&max=15`
+        `https://gnews.io/api/v4/search?q=${search}&token=8e70544bf215cb959f607aa1f9c0be02&country=in&max=15`
       )
       .then((res) => {
         console.log(res.data);
@@ -28,23 +28,24 @@ export const NewsApi = () => {
   }, [search]);
   return (
     <>
-    <div className="searchDiv">
-      <input
-      className="searchBox"
-        type="text"
-        onChange={handleChange}
-        placeholder="search by title"
-      />
+      <div className="searchDiv">
+        <input
+          className="searchBox"
+          type="text"
+          onChange={handleChange}
+          placeholder="search by title"
+        />
       </div>
 
-      <h2>News api page</h2>
       <div className="newsCont">
         {data &&
           data.map((news, index) => (
             <div key={index} className="oneNews">
               <div className="descNews">
-                <p>{news.title}</p>
-                <h2>{news.description}</h2>
+                <h2 className="title">{news.title}</h2>
+                <p className="desc">{news.description}</p>
+                {/* <h3 className="moreAboutNews"></h3> */}
+                More about news <a className="moreAboutNews" href={news.url}>Click here</a>
               </div>
 
               <img className="newsImg" src={news.image} alt="" />

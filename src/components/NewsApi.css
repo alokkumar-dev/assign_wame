@@ -4,26 +4,43 @@
   box-sizing: border-box;
 }
 .newsCont {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  width: 100%;
+  margin-top: 50px;
+  font-family: sans-serif;
 }
-.searchDiv{
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
+.searchDiv {
+  width: 100%;
+  text-align: center;
+  margin: 10px auto;
+  /* position: fixed; */
 }
-.searchBox{
-    width: 350px;
-    height: 40px;
-    font-size: 20px;
+.searchBox {
+  width: 450px;
+  height: 40px;
+  font-size: 20px;
+  border: 2px solid rgb(60, 60, 60);
 }
 .oneNews {
   display: flex;
   width: 50%;
+  margin: 10px auto;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding: 15px;
 }
 .descNews {
-  border: 1px solid red;
 }
 .newsImg {
-  height: 150px;
-  width: 150px;
+  width: 250px;
+  height: 200px;
+}
+.title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.desc {
+  font-size: 16px;
+  margin-bottom: 35px;
+
 }
